@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Girlfriend?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Brush Script MT;
+            background-color: #fce4ec;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #gif-container img {
+            width: 300px; /* Adjust size as needed */
+            height: auto;
+	    border-radius: 20px; /* Adjust the value for more/less rounding */
+        }
+        #question {
+            font-size: 25px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .btn-container {
+            display: flex;
+	    flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no-btn {
+            background-color: #f44336;
+            color: white;
+            font-size: 14px;
+            padding: 10px 10px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="gif-container">
+        <img id="gif" src="cute_gif_plz.gif" alt="Cute GIF"> 
+    </div>
+
+    <div id="question">Lina, Will You Be Karim's Girlfriend?</div>
+
+    <div class="btn-container">
+        <button id="yes-btn" class="btn">Yes</button>
+        <button id="no-btn" class="btn">No</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("no-btn");
+        const yesBtn = document.getElementById("yes-btn");
+        const gif = document.getElementById("gif");
+
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * 500 - 500; // Moves left or right slightly
+            const y = Math.random() * 500 - 500; // Moves up or down slightly
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        yesBtn.addEventListener("click", () => {
+            gif.src = "cute_gif_yay.gif"; // Replace with the new GIF file
+        });
+    </script>
+
+</body>
+</html>
